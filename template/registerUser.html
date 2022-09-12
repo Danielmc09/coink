@@ -1,0 +1,14 @@
+{% extends 'template/index.html' %}
+{% block content %}
+    <h2>Registro de usuarios</h2>
+    <form action="{% url 'user:registerUser' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <div>
+    <a class="btn btn-info" href="{% url 'user:listUser' %}">Lista de usuarios</a>
+    </div>
+{% endblock content %}

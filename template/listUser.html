@@ -1,0 +1,25 @@
+{% extends 'template/index.html' %}
+{% block content %}
+    <div>
+        <a class="btn btn-primary" href="{% url 'user:registerUser' %}"> Crear usuario</a>
+    </div>
+    <div>
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+            <tr>
+                <th>Nombre completo</th>
+                <th>Email</th>
+                <th>Ciudad</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in object_list %}
+                <tr>
+                    <td>{{ data.full_name }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.city }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}
